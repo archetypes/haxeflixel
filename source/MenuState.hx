@@ -9,11 +9,10 @@ import org.flixel.FlxPath;
 import org.flixel.FlxSave;
 import org.flixel.FlxSprite;
 import org.flixel.FlxState;
-import org.flixel.FlxText;
 import org.flixel.util.FlxMath;
 
 class MenuState extends FlxState {
-	var hello:FlxText;
+	var hello:Hello;
 /**
 	 * Function that is called up when to state is created to set it up. 
 	 */
@@ -22,11 +21,11 @@ class MenuState extends FlxState {
 // Set a background color
 		FlxG.bgColor = 0xff131c1b;
 // Show the mouse (in case it hasn't been disabled)
-#if !FLX_NO_MOUSE
-		FlxG.mouse.show();
-#end
+//#if !FLX_NO_MOUSE
+//		FlxG.mouse.show();
+//#end
 
-		hello = new FlxText(0, 0, 100, "Hello World!");
+		hello = new Hello(0, 0);
 		add(hello);
 
 		super.create();
@@ -50,6 +49,5 @@ class MenuState extends FlxState {
 
 	override public function update():Void {
 		super.update();
-		hello.x += 1;
 	}
 }

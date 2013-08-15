@@ -1,0 +1,15 @@
+package;
+
+import org.flixel.FlxText;
+
+class Hello extends FlxText {
+	public function new(x:Float, y:Float) {
+		super(x, y, 100, "Hello World!");
+	}
+
+	override public function update():Void {
+		super.update();
+		this.x += 1;
+		this.y = 50 + 50*Math.sin(this.x/60);
+	}
+}
