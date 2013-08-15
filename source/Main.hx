@@ -12,37 +12,33 @@ import org.flixel.FlxGame;
 /**
  * @author Joshua Granick
  */
-class Main extends Sprite 
-{
-	
-	public function new () 
-	{
+class Main extends Sprite {
+
+	public function new() {
 		super();
-		
-		if (stage != null) 
+
+		if (stage != null)
 			init();
-		else 
+		else
 			addEventListener(Event.ADDED_TO_STAGE, init);
 	}
-	
-	private function init(?e:Event = null):Void 
-	{
-		if (hasEventListener(Event.ADDED_TO_STAGE))
-		{
+
+	private function init(?e:Event = null):Void {
+		if (hasEventListener(Event.ADDED_TO_STAGE)) {
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 		}
-		
+
 		initialize();
-		
+
 		var demo:FlxGame = new ProjectClass();
 		addChild(demo);
-		
-		#if (cpp || neko)
+
+#if (cpp || neko)
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUP);
 		#end
 	}
-	
-	#if (cpp || neko)
+
+#if (cpp || neko)
 	private function onKeyUP(e:KeyboardEvent):Void 
 	{
 		if (e.keyCode == Keyboard.ESCAPE)
@@ -51,17 +47,17 @@ class Main extends Sprite
 		}
 	}
 	#end
-	
-	private function initialize():Void 
-	{
+
+	private function initialize():Void {
 		Lib.current.stage.align = StageAlign.TOP_LEFT;
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 	}
-	
-	// Entry point
+
+// Entry point
+
 	public static function main() {
-		
+
 		Lib.current.addChild(new Main());
 	}
-	
+
 }
