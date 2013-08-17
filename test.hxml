@@ -2,7 +2,6 @@
 -main TestMain
 -lib munit
 -lib hamcrest
--cp source
 -cp src
 
 -cp test
@@ -15,7 +14,6 @@
 -main TestMain
 -lib munit
 -lib hamcrest
--cp source
 -cp src
 
 -cp test
@@ -28,7 +26,6 @@
 -main TestMain
 -lib munit
 -lib hamcrest
--cp source
 -cp src
 
 -cp test
@@ -40,7 +37,6 @@
 -main TestMain
 -lib munit
 -lib hamcrest
--cp source
 -cp src
 
 -cp test
@@ -52,7 +48,6 @@
 -main TestMain
 -lib munit
 -lib hamcrest
--cp source
 -cp src
 
 -cp test
